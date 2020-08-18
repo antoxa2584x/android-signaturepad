@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
 
 Properties properties = new Properties()
 final def bintrayPropertiesFile = project.rootProject.file('bintray.properties')
@@ -13,6 +14,8 @@ android {
         minSdkVersion 14
         targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_SDK_VERSION)
         consumerProguardFiles 'proguard-rules-consumer.pro'
+
+        versionName "1.0.1"
     }
 
     dataBinding {
@@ -111,3 +114,5 @@ artifacts {
     archives javadocJar
     archives sourcesJar
 }
+
+group='com.github.antoxa2584x'
